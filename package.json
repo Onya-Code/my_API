@@ -1,15 +1,15 @@
 {
   "name": "my_api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Blogging API",
+  "main": "express.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node express.js",
     "dev": "nodemon express.js"
   },
   "keywords": [],
-  "author": "Andy Onyaka",
+  "author": "Andy Onajite Onyaka",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
