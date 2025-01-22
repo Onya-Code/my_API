@@ -1,0 +1,67 @@
+import { getAllPost } from '../Post';
+
+const PostService = require('./services/post');
+
+const createPost = async (req, res) => {
+ const payload = req.body;
+ const createPost = req.user
+
+ const serviceResponse = await PostService.createPost({
+  text: payload.text,
+  user
+ })
+
+ return res.status(serviceResponse.code).json(serviceResponse);
+}
+
+const getPost = async (req, res) => {
+ const postId = req.param.postId
+
+ const serviceResponse = await PostService.getPost({
+  postId
+ })
+
+ return res.status(serviceResponse.code).json(serviceResponse);
+}
+
+const getAllPostPost = async (req, res) => {
+ const serviceResponse = await PostService.getAllPost({
+  postId,
+  user,
+ })
+
+ return res.status(serviceResponse.code).json(serviceResponse);
+}
+
+const updatePost = async (req, res) => {
+ const postId = req.param.postId
+ const createPost = req.user
+
+ const serviceResponse = await PostService.updatePost({
+  postId,
+  user,
+ })
+
+ return res.status(serviceResponse.code).json(serviceResponse);
+}
+
+const deletePost = async (req, res) => {
+ const postId = req.param.postId
+ const createPost = req.user
+
+ const serviceResponse = await PostService.deletePost({
+  postId,
+  user
+ })
+
+ return res.status(serviceResponse.code).json(serviceResponse);
+}
+
+
+module.exports = {
+ createPost,
+ getPost,
+ getAllPost,
+ updatePost,
+ deletePost,
+}
